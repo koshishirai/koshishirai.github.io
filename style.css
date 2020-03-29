@@ -3,19 +3,19 @@
 
 .message-window {
   /*width: 300px;*/
-  /*position: relative;*/
+  position: relative;
 }
 
 .message-window .message-area {
-  /*position: absolute;*/
+  position: absolute;
   /*left: 20px;*/
 }
 .message-window .message-area > .content {
-  /*position: relative;*/
+  position: relative;
 }
 .message-window .message-area > .content .arrow-white {
   background-color: #fff;
-  /*position: absolute;*/
+  position: absolute;
   width: 25px;
   height: 25px;
   bottom: 20px;
