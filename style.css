@@ -2,16 +2,16 @@
 /* CSS Document */
 
 .message-window {
-  width: 300px;
-  position: relative;
+  /*width: 300px;*/
+  /*position: relative;*/
 }
 
 .message-window .message-area {
   /*position: absolute;*/
-  left: 20px;*/
+  /*left: 20px;*/
 }
 .message-window .message-area > .content {
-  position: relative;
+  /*position: relative;*/
 }
 .message-window .message-area > .content .arrow-white {
   background-color: #fff;
