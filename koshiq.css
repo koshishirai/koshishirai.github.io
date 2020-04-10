@@ -14,8 +14,8 @@ ul.navi-top, ul.navi-top a {
         background-color:#f9fafb;/*メニューバーの背景色*/}
 
 ul.navi-top a:hover {
-        color:black;/*マウスオーバーの時の文字の色*/
-        background-color:grey;/*マウスオーバーの時の背景色*/}
+        color:black;
+        background-color:grey;}
 
 ul.navi-top {
 	position:fixed;
