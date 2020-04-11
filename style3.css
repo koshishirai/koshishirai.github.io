@@ -1,18 +1,30 @@
 @charset "UTF-8";
 /* CSS Document */
 
-.message-window {
+.entry-content .message-window {
   width: 300px;
   position: relative;
 }
-.message-window .message-area {
+
+.message-window ::before{
+  width: 300px;
   position: absolute;
+  background: url(https://cdn-ak.f.st-hatena.com/images/fotolife/k/koshivtuber/20200411/20200411084530.png);
+  z-index: 100;
+}
+
+
+.entry-content .message-window .message-area {
+  position: relative; /* absolute */
   left: 20px;
 }
-.message-window .message-area > .content {
+
+.entry-content .message-window .message-area > .content {
   position: relative;
+  z-index: 0;
 }
-.message-window .message-area > .content .arrow-white {
+
+.entry-content .message-window .message-area > .content .arrow-white {
   background-color: #fff;
   position: absolute;
   width: 25px;
@@ -25,20 +37,22 @@
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-.message-window .message-area > .content .arrow-black {
+
+.entry-content .message-window .message-area > .content .arrow-black {
   background-color: #000;
   position: absolute;
-  width: 28px;
+  width: 30px;
   height: 20px;
   bottom: 22px;
   left: -17px;
-  z-index: -10;
+  z-index: 20;
   clip-path: polygon(62% 43%, 100% 26%, 100% 73%, 53% 80%, 44% 56%, 0 71%, 56% 19%);
   animation-name: arrowBlackAnimation;
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-.message-window .message-area > .content .background-white {
+
+.entry-content .message-window .message-area > .content .background-white {
   background-color: #fff;
   position: absolute;
   width: 100%;
@@ -49,7 +63,8 @@
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-.message-window .message-area > .content .background-black {
+
+.entry-content .message-window .message-area > .content .background-black {
   background-color: #000;
   position: absolute;
   width: calc(100% - 25px);
@@ -58,14 +73,15 @@
   margin-right: 20px;
   margin-top: 5px;
   margin-bottom: 7px;
-  z-index: -30;
+  z-index: -2;
   clip-path: polygon(6% 0, 100% 0, 95% 100%, 0 87%);
   animation-name: backgroundBlackAnimation;
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-.message-window .message-area > .content .text-area {
-  color: #fff;
+
+.entry-content .message-window .message-area > .content .text-area {
+  color: #ff0;
   font-size: 20px;
   margin-left: 5px;
   margin-right: 50px;
@@ -76,6 +92,7 @@
   padding-top: 15px;
   padding-bottom: 20px;
   line-height: 1.2em;
+  z-index: 100;
 }
 
 @keyframes arrowWhiteAnimation {
@@ -146,152 +163,88 @@
     clip-path: polygon(6% 0, 100% 0, 95% 100%, 0 87%);
   }
 }
-=======
-@charset "UTF-8";
-/* CSS Document */
 
-.message-window {
-  width: 300px;
-  position: relative;
-}
-.message-window .message-area {
-  position: absolute;
-  left: 20px;
-}
-.message-window .message-area > .content {
-  position: relative;
-}
-.message-window .message-area > .content .arrow-white {
-  background-color: #fff;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  bottom: 20px;
-  left: -17px;
-  z-index: -20;
-  clip-path: polygon(62% 43%, 100% 17%, 100% 73%, 50% 100%, 44% 56%, 0 71%, 55% 8%);
-  animation-name: arrowWhiteAnimation;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-.message-window .message-area > .content .arrow-black {
-  background-color: #000;
-  position: absolute;
-  width: 28px;
-  height: 20px;
-  bottom: 22px;
-  left: -17px;
-  z-index: -10;
-  clip-path: polygon(62% 43%, 100% 26%, 100% 73%, 53% 80%, 44% 56%, 0 71%, 56% 19%);
-  animation-name: arrowBlackAnimation;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-.message-window .message-area > .content .background-white {
-  background-color: #fff;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -40;
-  clip-path: polygon(6% 0, 100% 0, 90% 100%, 0 87%);
-  animation-name: backgroundWhiteAnimation;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-.message-window .message-area > .content .background-black {
-  background-color: #000;
-  position: absolute;
-  width: calc(100% - 25px);
-  height: calc(100% - 12px);
-  margin-left: 5px;
-  margin-right: 20px;
-  margin-top: 5px;
-  margin-bottom: 7px;
-  z-index: -30;
-  clip-path: polygon(6% 0, 100% 0, 95% 100%, 0 87%);
-  animation-name: backgroundBlackAnimation;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-.message-window .message-area > .content .text-area {
-  color: #fff;
-  font-size: 20px;
-  margin-left: 5px;
-  margin-right: 50px;
-  margin-top: 5px;
-  margin-bottom: 7px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 15px;
-  padding-bottom: 20px;
-  line-height: 1.2em;
-}
 
-@keyframes arrowWhiteAnimation {
-  0% {
-    clip-path: polygon(62% 43%, 100% 17%, 100% 73%, 50% 100%, 44% 56%, 0 71%, 55% 8%);
+/* 吹き出しのCSS　*/
+.entry-content .l-fuki,
+.entry-content .r-fuki {
+  position: relative;
+  width: calc(100% - 82px);
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 20px;
+  border-radius: 6px;
+  border: 2px solid #ddd;
+  box-shadow: 0 3px 8px -2px rgba(0,0,0,.16);
+  background-color: #fff;
+  z-index: 1;
+  box-sizing: border-box;
+}
+.entry-content .l-fuki {
+  margin: 20px auto 36px 0;
+}
+.entry-content .r-fuki {
+  margin: 20px 0 36px auto;
+}
+.entry-content .l-fuki::before,
+.entry-content .r-fuki::before {
+  position: absolute;
+  content: "";
+  top: 16px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  background-color: #fff;
+  z-index: 2;
+}
+.entry-content .l-fuki::before {
+  right: -7px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.entry-content .r-fuki::before {
+  left: -7px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.entry-content .l-fuki::after,
+.entry-content .r-fuki::after {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 60px;
+  top: -6px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-shadow: 1px 1px 5px #aaa;
+  box-sizing: border-box;
+}
+.entry-content .l-fuki::after {
+  right: -82px;
+}
+.entry-content .r-fuki::after {
+  left: -82px;
+}
+@media screen and (min-width: 478px) {
+  .entry-content .l-fuki::after,
+  .entry-content .r-fuki::after {
+    width: 80px;
+    height: 80px;
   }
-  25% {
-    clip-path: polygon(62% 43%, 100% 18%, 99% 73%, 50% 99%, 44% 56%, 0 72%, 55% 8%);
+  .entry-content .l-fuki,
+  .entry-content .r-fuki {
+    width: calc(100% - 106px);
   }
-  50% {
-    clip-path: polygon(61% 43%, 98% 17%, 100% 73%, 48% 100%, 43% 56%, 1% 71%, 56% 8%);
+  .entry-content .l-fuki::after {
+    right: -106px;
   }
-  75% {
-    clip-path: polygon(62% 44%, 100% 17%, 100% 72%, 50% 100%, 44% 58%, 0 71%, 55% 9%);
-  }
-  100% {
-    clip-path: polygon(62% 43%, 100% 17%, 100% 73%, 50% 100%, 44% 56%, 0 71%, 55% 8%);
+  .entry-content .r-fuki::after {
+    left: -106px;
   }
 }
-@keyframes arrowBlackAnimation {
-  0% {
-    clip-path: polygon(62% 43%, 100% 26%, 100% 73%, 53% 80%, 44% 56%, 0 71%, 56% 19%);
-  }
-  25% {
-    clip-path: polygon(63% 43%, 100% 26%, 98% 73%, 53% 80%, 42% 56%, 1% 71%, 56% 19%);
-  }
-  50% {
-    clip-path: polygon(62% 44%, 100% 27%, 100% 72%, 53% 81%, 44% 57%, 0 74%, 56% 18%);
-  }
-  75% {
-    clip-path: polygon(62% 43%, 99% 26%, 100% 73%, 54% 80%, 44% 56%, 0 71%, 57% 19%);
-  }
-  100% {
-    clip-path: polygon(62% 43%, 100% 26%, 100% 73%, 53% 80%, 44% 56%, 0 71%, 56% 19%);
-  }
-}
-@keyframes backgroundWhiteAnimation {
-  0% {
-    clip-path: polygon(6% 0, 100% 0, 90% 100%, 0 87%);
-  }
-  25% {
-    clip-path: polygon(6% 0, 98% 1%, 90% 100%, 1% 88%);
-  }
-  50% {
-    clip-path: polygon(6% 2%, 100% 0, 89% 100%, 0 87%);
-  }
-  75% {
-    clip-path: polygon(6% 0, 100% 0, 90% 99%, 0 87%);
-  }
-  100% {
-    clip-path: polygon(6% 0, 100% 0, 90% 100%, 0 87%);
-  }
-}
-@keyframes backgroundBlackAnimation {
-  0% {
-    clip-path: polygon(6% 0, 100% 0, 95% 100%, 0 87%);
-  }
-  25% {
-    clip-path: polygon(7% 0, 100% 0, 94% 100%, 0 88%);
-  }
-  50% {
-    clip-path: polygon(6% 1%, 100% 0, 95% 99%, 0 87%);
-  }
-  75% {
-    clip-path: polygon(6% 0, 99% 1%, 95% 100%, 1% 87%);
-  }
-  100% {
-    clip-path: polygon(6% 0, 100% 0, 95% 100%, 0 87%);
-  }
-}
+.koshivtuber::after {background-image:url(https://cdn-ak.f.st-hatena.com/images/fotolife/k/koshivtuber/20200411/20200411084556.jpg);}
+.koshivtuber2::after {background-image:url(https://cdn-ak.f.st-hatena.com/images/fotolife/k/koshivtuber/20200411/20200411084530.png);}
