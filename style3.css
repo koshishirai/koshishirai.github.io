@@ -1,30 +1,18 @@
 @charset "UTF-8";
 /* CSS Document */
 
-.entry-content .message-window {
+.message-window {
   width: 300px;
   position: relative;
 }
-
-.message-window ::before{
-  width: 300px;
+.message-window .message-area {
   position: absolute;
-  background: url(https://cdn-ak.f.st-hatena.com/images/fotolife/k/koshivtuber/20200411/20200411084530.png);
-  z-index: 100;
-}
-
-
-.entry-content .message-window .message-area {
-  position: relative; /* absolute */
   left: 20px;
 }
-
-.entry-content .message-window .message-area > .content {
+.message-window .message-area > .content {
   position: relative;
-  z-index: 0;
 }
-
-.entry-content .message-window .message-area > .content .arrow-white {
+.message-window .message-area > .content .arrow-white {
   background-color: #fff;
   position: absolute;
   width: 25px;
@@ -37,22 +25,20 @@
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-
-.entry-content .message-window .message-area > .content .arrow-black {
+.message-window .message-area > .content .arrow-black {
   background-color: #000;
   position: absolute;
-  width: 30px;
+  width: 28px;
   height: 20px;
   bottom: 22px;
   left: -17px;
-  z-index: 20;
+  z-index: -10;
   clip-path: polygon(62% 43%, 100% 26%, 100% 73%, 53% 80%, 44% 56%, 0 71%, 56% 19%);
   animation-name: arrowBlackAnimation;
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-
-.entry-content .message-window .message-area > .content .background-white {
+.message-window .message-area > .content .background-white {
   background-color: #fff;
   position: absolute;
   width: 100%;
@@ -63,8 +49,7 @@
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-
-.entry-content .message-window .message-area > .content .background-black {
+.message-window .message-area > .content .background-black {
   background-color: #000;
   position: absolute;
   width: calc(100% - 25px);
@@ -73,15 +58,15 @@
   margin-right: 20px;
   margin-top: 5px;
   margin-bottom: 7px;
-  z-index: -2;
+  z-index: -30;
   clip-path: polygon(6% 0, 100% 0, 95% 100%, 0 87%);
   animation-name: backgroundBlackAnimation;
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-
-.entry-content .message-window .message-area > .content .text-area {
-  color: #ff0;
+.message-window .message-area > .content .text-area {
+  width: calc(100%);
+  color: #fff;
   font-size: 20px;
   margin-left: 5px;
   margin-right: 50px;
@@ -92,7 +77,6 @@
   padding-top: 15px;
   padding-bottom: 20px;
   line-height: 1.2em;
-  z-index: 100;
 }
 
 @keyframes arrowWhiteAnimation {
@@ -165,9 +149,10 @@
 }
 
 
+
 /* 吹き出しのCSS　*/
-.entry-content .l-fuki,
-.entry-content .r-fuki {
+.l-fuki,
+.r-fuki {
   position: relative;
   width: calc(100% - 82px);
   box-sizing: border-box;
@@ -179,15 +164,24 @@
   background-color: #fff;
   z-index: 1;
   box-sizing: border-box;
+      background-color: #000;
+  position: absolute;
+  width: calc(100% - 25px);
+  height: calc(100% - 12px);
+  z-index: -30;
+  clip-path: polygon(6% 0, 100% 0, 95% 100%, 0 87%);
+  animation-name: backgroundBlackAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
-.entry-content .l-fuki {
+.l-fuki {
   margin: 20px auto 36px 0;
 }
-.entry-content .r-fuki {
+.r-fuki {
   margin: 20px 0 36px auto;
 }
-.entry-content .l-fuki::before,
-.entry-content .r-fuki::before {
+.l-fuki::before,
+.r-fuki::before {
   position: absolute;
   content: "";
   top: 16px;
@@ -198,18 +192,18 @@
   background-color: #fff;
   z-index: 2;
 }
-.entry-content .l-fuki::before {
+.l-fuki::before {
   right: -7px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
-.entry-content .r-fuki::before {
+.r-fuki::before {
   left: -7px;
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
-.entry-content .l-fuki::after,
-.entry-content .r-fuki::after {
+.l-fuki::after,
+.r-fuki::after {
   position: absolute;
   content: "";
   width: 60px;
@@ -223,28 +217,29 @@
   box-shadow: 1px 1px 5px #aaa;
   box-sizing: border-box;
 }
-.entry-content .l-fuki::after {
+ .l-fuki::after {
   right: -82px;
 }
-.entry-content .r-fuki::after {
+.r-fuki::after {
   left: -82px;
 }
 @media screen and (min-width: 478px) {
-  .entry-content .l-fuki::after,
-  .entry-content .r-fuki::after {
+  .l-fuki::after,
+  .r-fuki::after {
     width: 80px;
     height: 80px;
   }
-  .entry-content .l-fuki,
-  .entry-content .r-fuki {
+  .l-fuki,
+  .r-fuki {
     width: calc(100% - 106px);
   }
-  .entry-content .l-fuki::after {
+  .l-fuki::after {
     right: -106px;
   }
-  .entry-content .r-fuki::after {
+  .r-fuki::after {
     left: -106px;
   }
 }
+
 .koshivtuber::after {background-image:url(https://cdn-ak.f.st-hatena.com/images/fotolife/k/koshivtuber/20200411/20200411084556.jpg);}
 .koshivtuber2::after {background-image:url(https://cdn-ak.f.st-hatena.com/images/fotolife/k/koshivtuber/20200411/20200411084530.png);}
