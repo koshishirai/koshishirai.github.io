@@ -1,3 +1,3 @@
 # koshishirai.github.io
 
-Copyright & Author: koshishirai
+Copyright & Author: @koshishirai
