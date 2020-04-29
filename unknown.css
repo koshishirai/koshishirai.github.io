@@ -40,8 +40,13 @@
       background-position: 50px 50px;
     }
   }
+<<<<<<< HEAD
   
   /* Main styles */
+=======
+
+ /* Main styles */
+>>>>>>> ec2a757aa44ce27850eb299aec676eb7af28bc8e
   body {
     color: #fff;
     font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
@@ -59,4 +64,9 @@
     -moz-animation-timing-function: linear;
     -o-animation-timing-function: linear;
     animation-timing-function: linear;
+<<<<<<< HEAD
   }
+=======
+  }
+  
+>>>>>>> ec2a757aa44ce27850eb299aec676eb7af28bc8e
