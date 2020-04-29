@@ -1,0 +1,93 @@
+
+<html>
+    
+<head>
+<meta charset="UTF-8">
+<style> 
+
+h1 {
+     position: relative;
+     padding-bottom: 0.5em;
+}
+ 
+h1::after {
+     position: absolute;
+     content: '';
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     height: 7px;
+     box-sizing: border-box;
+     border-top: 3px solid black;
+     border-bottom: 1px solid black;
+}
+    
+h2 {
+  position: relative;
+  font-size: 26px;/*文字サイズ*/
+  font-weight: bold;/*文字の太さ*/
+  padding: 0.8rem 1rem 0.8rem 1rem;/*要素内余白*/
+  margin-top: 2rem;/*要素外余白*/
+  margin-bottom: 2rem;/*要素外余白*/
+  line-height: 1.4em;/*行の高さ*/
+  color: #555;/*文字色*/
+ 
+}
+h2::after{
+  position: absolute;
+  content: "";
+  display: block;
+  background-image: linear-gradient(-100deg, #FF057C 0%, #7C64D5 48%, #4CC3FF 100%);
+  bottom: -0em;
+  left: 0;
+  opacity: 40%;
+  right: 0;
+  height: 7em;
+clip-path: polygon(0 91%, 15% 88%, 11% 81%, 100% 92%, 12% 100%, 15% 94%);
+
+}
+    
+h3{position: relative;
+}
+
+h3::after{
+  position: absolute;
+  content: "";
+  display: block;
+  background-image: linear-gradient(-100deg, #FF0000 0%, #FFFF00 48%, #4CC3FF 100%);
+  bottom: -0em;
+  left: 0;
+  opacity: 40%;
+  right: 0;
+  height: 7em;
+  -webkit-clip-path: polygon(88% 86%, 95% 96%, 90% 78%, 100% 100%, 0 100%, 0 98%, 93% 98%);
+} 
+    
+
+</style>
+</head>
+    
+<body>
+    <h3>エラー「A build only device cannot be used to run this target.」</h3> 
+    
+<h1>見出しデザイン</h1>
+<h2>エラー「A build only device cannot be used to run this target.」</h2>
+    
+     -webkit-clip-path: polygon(0 95%, 100% 80%, 100% 100%, 0% 100%); 
+  clip-path: polygon(13% 78%, 85% 78%, 85% 93%, 100% 93%, 100% 100%, 84% 100%, 0 100%);
+    clip-path: polygon(0 95%, 9% 95%, 0 81%, 89% 82%, 100% 100%, 0 100%);
+    
+    clip-path: polygon(0 95%, 9% 95%, 9% 84%, 85% 84%, 100% 100%, 0 100%);
+    
+      -webkit-clip-path: polygon(0 89%, 11% 89%, 100% 89%, 90% 100%, 0 100%, 9% 93%, 0 94%);
+    
+    clip-path: polygon(100% 81%, 91% 89%, 100% 89%, 100% 96%, 89% 95%, 89% 100%, 0 100%);
+    
+    -webkit-clip-path: polygon(94% 98%, 89% 89%, 100% 100%, 0 100%, 0 99%); good h2
+  -webkit-clip-path: polygon(83% 86%, 94% 96%, 89% 78%, 100% 100%, 0 100%, 0 98%, 91% 98%); good h3
+    
+    clip-path: polygon(77% 93%, 90% 96%, 81% 87%, 100% 100%, 0 100%, 0 98%, 87% 98%);
+
+</body>
+  
+
